@@ -1,6 +1,7 @@
 package main
 
 import (
+	"booking-app/helpers"
 	"fmt"
 	"strings"
 )
@@ -22,7 +23,7 @@ func main() {
 
 	for remainingTickets > 0 {
 		firstName, lastName, email, userTickets = getUserInputs(firstName, lastName, email, userTickets)
-		isValidName, isValidEmail, isValidTicketNumber := validateUserInputs(firstName, lastName, email, userTickets)
+		isValidName, isValidEmail, isValidTicketNumber := helpers.ValidateUserInputs(firstName, lastName, email, userTickets, remainingTickets)
 
 		if !isValidName {
 			fmt.Println("Your first and last names must have at least 2 characters each")
