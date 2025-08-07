@@ -7,7 +7,14 @@ const confTickets uint = 50
 
 var confName string = "Go Conference"
 var remainingTickets uint = confTickets
-var bookings = make([]map[string]string, 0)
+var bookings = make([]UserData, 0)
+
+type UserData struct {
+	firstName string
+	lastName  string
+	email     string
+	tickets   uint
+}
 
 func main() {
 	var firstName string

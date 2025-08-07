@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"strconv"
 	"strings"
 )
 
@@ -37,13 +36,12 @@ func validateUserInputs(firstName string, lastName string, email string, userTic
 func bookTickets(firstName string, lastName string, email string, userTickets uint) {
 	remainingTickets -= userTickets
 
-	// Create a map for a user
-	var userData = make(map[string]string)
-	userData["firstName"] = firstName
-	userData["lastName"] = lastName
-	userData["email"] = email
-	userData["userTickets"] = strconv.FormatUint(uint64(userTickets), 10)
-	// This example contains both direct and indrect type-casting
+	var userData = UserData{
+		firstName: firstName,
+		lastName:  lastName,
+		email:     email,
+		tickets:   userTickets,
+	}
 
 	bookings = append(bookings, userData)
 	fmt.Printf("Updated list of bookings is %v\n", bookings)
@@ -56,7 +54,7 @@ func getFirstNames() []string {
 	var firstNames []string
 
 	for _, booking := range bookings {
-		firstNames = append(firstNames, booking["firstName"])
+		firstNames = append(firstNames, booking.firstName)
 	}
 
 	return firstNames
