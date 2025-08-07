@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // typehint is after variable name instead of before, unlike other languages
 const confTickets uint = 50
@@ -43,10 +46,21 @@ func main() {
 
 		// else ...
 		bookTickets(firstName, lastName, email, userTickets)
+		sendTicket(firstName, lastName, email, userTickets)
 
 		fmt.Printf("These are the first names for all existing bookings: %v\n", getFirstNames())
 	}
 
 	// End program
 	fmt.Println("The conference is booked out. Please come check again next year.")
+}
+
+func sendTicket(firstName string, lastName string, email string, userTickets uint) {
+	// Simulating the time it would take to send the ticket
+	time.Sleep(10 * time.Second)
+
+	var ticket = fmt.Sprintf("%v tickets for %v %v", userTickets, firstName, lastName)
+	fmt.Println("####################")
+	fmt.Printf("Sending ticket:\n%v\nto email address %v\n", ticket, email)
+	fmt.Println("####################")
 }
