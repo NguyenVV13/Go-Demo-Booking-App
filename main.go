@@ -7,7 +7,7 @@ const confTickets uint = 50
 
 var confName string = "Go Conference"
 var remainingTickets uint = confTickets
-var bookings = []string{}
+var bookings = make([]map[string]string, 0)
 
 func main() {
 	var firstName string
@@ -35,10 +35,8 @@ func main() {
 		}
 
 		// else ...
-		bookTickets(firstName, lastName, userTickets)
+		bookTickets(firstName, lastName, email, userTickets)
 
-		fmt.Printf("Thank you, %v %v, for booking %v ticket(s).\nYou will receive a confirmation email at %v.\n", firstName, lastName, userTickets, email)
-		fmt.Printf("There are now %v tickets remaining for %v.\n", remainingTickets, confName)
 		fmt.Printf("These are the first names for all existing bookings: %v\n", getFirstNames())
 	}
 
