@@ -42,7 +42,7 @@ func main() {
 
 		fmt.Printf("Thank you, %v %v, for booking %v ticket(s).\nYou will receive a confirmation email at %v.\n", firstName, lastName, userTickets, email)
 		fmt.Printf("There are now %v tickets remaining for %v.\n", remainingTickets, confName)
-		fmt.Printf("These are the first names for all existing bookings: %v\n\n", getFirstNames())
+		fmt.Printf("These are the first names for all existing bookings: %v\n", getFirstNames())
 	}
 
 	// End program
@@ -67,14 +67,6 @@ func getUserInputs(firstName string, lastName string, email string, userTickets 
 	fmt.Scan(&userTickets)
 
 	return firstName, lastName, email, userTickets
-}
-
-func validateUserInputs(firstName string, lastName string, email string, userTickets uint) (bool, bool, bool) {
-	var isValidName bool = len(firstName) >= 2 && len(lastName) >= 2
-	var isValidEmail bool = strings.Contains(email, "@") && strings.Contains(email, ".")
-	var isValidTicketNumber bool = userTickets > 0 && userTickets <= remainingTickets
-
-	return isValidName, isValidEmail, isValidTicketNumber
 }
 
 func bookTickets(firstName string, lastName string, userTickets uint) {
