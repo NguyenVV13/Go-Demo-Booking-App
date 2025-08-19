@@ -1,0 +1,21 @@
+Create webapp for event booking
+
+Frontend
+[ ] Setup homepage
+* Buttons to book and check reservations
+* Ticket counter
+[ ] Setup ticket booking page
+* Ensure that no more tickets can be booked if booked out
+[ ] Setup ticket confirmation page
+[ ] Setup ticket checking page
+
+Backend
+[ ] Setup Golang server to serve each page
+    [ ] Home
+    [ ] Booking
+    [ ] Confirmation
+    [ ] Checking
+[ ] Setup SQL database for reservations
+
+Bonus
+[ ] User login
