@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"log"
+	"net/http"
 	"sync"
 	"time"
 )
@@ -23,12 +25,13 @@ type UserData struct {
 var wg = sync.WaitGroup{}
 
 func main() {
+	http.HandleFunc("/", greetUsers)
+	log.Fatal(http.ListenAndServe(":8080", nil))
+
 	var firstName string
 	var lastName string
 	var email string
 	var userTickets uint
-
-	greetUsers()
 
 	for remainingTickets > 0 {
 		firstName, lastName, email, userTickets = getUserInputs(firstName, lastName, email, userTickets)

@@ -6,6 +6,8 @@ https://www.youtube.com/watch?v=yyUHQIec83I
 
 This tutorial executes purely on the CLI. Expansions to this project would be to make it a webapp that takes input, saves the ticket and user data into a database, and lands the user onto a confirmation page.
 
-Basic HTTP functionality added from Nana's Go crashcourse tutorial
+Basic HTTP functionality added from Go wiki article and other resources:
 
-https://www.youtube.com/watch?v=XCZWyN9ZbEQ
+https://go.dev/doc/articles/wiki/
+
+https://www.digitalocean.com/community/tutorials/how-to-make-an-http-server-in-go

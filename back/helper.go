@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"strings"
 )
 
-func greetUsers() {
+func greetUsers(writer http.ResponseWriter, request *http.Request) {
 	// Formatted print, doesn't include newline by default, %v is the default format for variables
-	fmt.Printf("Welcome to the %v booking application!\n", confName)
-	fmt.Printf("We have a total of %v tickets, and %v are still available.\n", confTickets, remainingTickets)
-	fmt.Println("Get your tickets here to attend.")
+	fmt.Fprintf(writer, "Welcome to the %v booking application!\n", confName)
+	fmt.Fprintf(writer, "We have a total of %v tickets, and %v are still available.\n", confTickets, remainingTickets)
+	fmt.Fprintln(writer, "Get your tickets here to attend.")
 }
 
 func getUserInputs(firstName string, lastName string, email string, userTickets uint) (string, string, string, uint) {
