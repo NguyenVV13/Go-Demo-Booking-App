@@ -8,6 +8,6 @@ This tutorial executes purely on the CLI. Expansions to this project would be to
 
 Basic HTTP functionality added from Go wiki article and other resources:
 
-https://go.dev/doc/articles/wiki/
+https://www.slingacademy.com/article/serving-static-files-with-go-http/
 
-https://www.digitalocean.com/community/tutorials/how-to-make-an-http-server-in-go
+https://www.alexedwards.net/blog/serving-static-sites-with-go
